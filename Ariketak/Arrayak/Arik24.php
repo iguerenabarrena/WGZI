@@ -9,7 +9,13 @@
     <?php 
         $paises = array ("alemania","brasil","italia","txil","uruguay","australia");
     
-        unset($paises[0], $paises[2], $paises[5]);
+        //in_array(("alemania", "italia", "australia") , $paises);
+        //unset($paises[0], $paises[2], $paises[5]);
+
+        $bilatu = array("alemania", "italia", "austria");
+       
+        $paises = array_diff($paises, $bilatu);
+        
 
         array_unshift($paises, "argentina", "bolivia");
 
