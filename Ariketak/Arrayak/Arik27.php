@@ -9,6 +9,8 @@
     <?php 
         $desio_zerrenda = ["Estatu batuak", "Italia", "Austria", "Portugal", "Marruekos", "Errusia"];
 
+        array_push($desio_zerrenda, "Norvegia", "Afganistan");
+
         $bisitatuak_2022 = array("Italia", "Frantzia");
         $bisitatuak_2023 = array("Portugal", "Japon");
 
