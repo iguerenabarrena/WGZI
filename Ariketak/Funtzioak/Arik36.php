@@ -10,17 +10,14 @@
 </head>
 <body>
     <?php  
-         echo "<table>";
+         echo "<table border=1>";
     for($i =1; $i<=4; $i++){
-        $zbk = rand(1,10);
-        $emaitza = $zbk * $i;
-        echo "
-        <tr>
-            <td>$i</td>
-            <td>$zbk</td>
-            <td>$emaitza</td>
-        </tr>
-        ";
+        echo "<tr>";
+        for($j = 1; $j<=4; $j++){
+            $zbk = rand(0,10);
+            echo "<td>". pow($zbk, $j) ."</td>";
+        }
+        echo "</tr>";
     }
     echo "</table>";
     ?>    
