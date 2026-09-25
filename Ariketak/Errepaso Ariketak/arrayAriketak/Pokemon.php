@@ -1,4 +1,6 @@
 <?php
+    $motak = ["Elektrikoa", "Sua", "Hegaldaria", "Ura", "Belarra", "Pozoia" ];
+
     $pokemonak = [
         "Pikachu"=>[
             "mota"=>"Elektrikoa",
@@ -42,14 +44,38 @@
         ]
     ];
 
-    function pokemonGehitu($izena, $mota, $maila, $eboluzionatuta){
-        global $pokemon;
+    function pokemonGehitu(string $izena, string $mota, int $maila, bool $eboluzionatuta){
+        global $pokemonak;
+        global $motak;
         $pokemonak[$izena] = [
         "mota" => $mota,
         "maila" => $maila,
         "eboluzionatuta" => $eboluzionatuta
     ];
     }
+
+    function pokemonErakutsi() {
+    global $pokemonak;
+    
+    echo "<h1>Pokemonak</h1>";
+    
+    foreach ($pokemonak as $pokemonIzena => $datuak) {
+        echo "<h3>" . $pokemonIzena . "</h3>";
+           foreach ($datuak as $gakoa => $balioa) {
+            
+            if (is_array($balioa)) {
+                echo "<p><strong>" . $gakoa . ": </strong>" . implode(", ", $balioa) . "</p>";
+            
+            } elseif (is_bool($balioa)) {
+                $testua = $balioa ? "Bai" : "Ez";
+                echo "<p><strong>" . $gakoa . ": </strong>" . $testua . "</p>";
+            
+            } else {
+                echo "<p><strong>" . $gakoa . ": </strong>" . htmlspecialchars($balioa) . "</p>";
+            }
+        }    
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +86,8 @@
 </head>
 <body>
     <?php 
-
+        pokemonGehitu("Eder", "Belarra" , 8, true);
+        pokemonErakutsi();
     ?>  
 </body>
 </html>
