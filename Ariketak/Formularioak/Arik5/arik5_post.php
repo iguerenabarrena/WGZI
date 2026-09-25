@@ -9,7 +9,7 @@
     <?php
         if(isset($_POST["bidali"])){
 
-            if(!empty($_POST["kolorea"])){
+            if(!empty($_POST["izena"]) && !empty($_POST["abizena"])){
                 
                 $koloreak = $_POST["kolorea"];
                 echo "<ul>";
@@ -19,7 +19,7 @@
                 echo"</ul>";
 
             }else{
-                 echo "<h1>Ez da kolorea jaso</h1><br>
+                 echo "<h1>Derrigorrezkoak dira izena abizena jartzea</h1><br>
                         <a href='./arik5.php'>Beste kolore bat aukeratu</a>";
             }
 
