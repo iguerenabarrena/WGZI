@@ -1,4 +1,6 @@
-
+<?
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="eu">
 
@@ -18,9 +20,18 @@
             <nav>
                 <a href="./index.php">Hasiera</a>
                 <a href="./bilatu.php">Bilatu</a>
-                <a href="./gehitu.php">Seriea gehitu</a>
-                <a href="./estatistikak.php">Estatistikak</a>
+                <?php 
+                if(isset($_SESSION['erabiltzaile'])): ?>
+                    <a href="./gehitu.php">Seriea gehitu</a>
+                    <a href="./estatistikak.php">Estatistikak</a>
+                    <a href="./logout.php">Log out</a>
+                <?php else : ?>
+                    <a href="./login.php">Log in</a>
+                <?php endif; ?>
+
+                
             </nav>
+                
         </div>
     </header>
 

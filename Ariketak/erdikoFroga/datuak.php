@@ -93,12 +93,12 @@ $series = [
      function serieaGehitu(string $izenburua, string $generoa, int $denboraldiak, float $balorazioa, bool $amaituta){
         global $series;
         $series[]= [
-        "izenburua" => $izenburua,
-        "generoa" => $generoa,
-        "denboraldiak" => $denboraldiak,
-        "balorazioa" => $balorazioa,
-        "amaituta" => $amaituta,
-        "irudia" => "img/default.jpg"
-    ];
+            "izenburua" => $izenburua,
+            "generoa" => $generoa,
+            "denboraldiak" => $denboraldiak,
+            "balorazioa" => $balorazioa,
+            "amaituta" => $amaituta,
+            "irudia" => "img/default.jpg"
+        ];
     }
 ?>

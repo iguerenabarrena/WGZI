@@ -41,7 +41,7 @@
                 $generoa = $_POST["generoa"];
                 $denboraldiak = $_POST["denboraldiak"];
                 $balorazioa = $_POST["balorazioa"];
-                $amaituta = $_POST["egoera"];
+                $amaituta = is_bool($_POST["egoera"]);
                 serieaGehitu($izenburua, $generoa, $denboraldiak, $balorazioa, $amaituta);
             }else{
                 echo "<p>Mesedez bete hutsune guztiak</p>";
