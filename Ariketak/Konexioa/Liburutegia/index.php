@@ -2,9 +2,10 @@
     session_start();
 
     if(!isset($_SESSION["erabiltzaile"])){
-            header("Location: ./logeatu.php");
+            header("Location: ./pages/logeatu.php");
             exit();
     }else{
-
+        header("Location: ./pages/hasiera.php ");
+        exit();
     }
 ?>

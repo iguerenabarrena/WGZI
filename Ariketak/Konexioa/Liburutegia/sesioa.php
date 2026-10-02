@@ -5,16 +5,15 @@
         if(!empty($_POST["erabiltzaile"]) && !empty($_POST["pasahitza"]) ){
             $erabiltzailea =  login($_POST["erabiltzaile"], $_POST["pasahitza"]);
             if($erabiltzailea){
-                 header("Location: hasiera.php");
+                 header("Location: ./pages/hasiera.php");
                  exit();
               
             }else{
-                 header("Location: logeatu.php");
-                 exit();
-              
+                header("Location: ./pages/logeatu.php");
+                exit();
             }
         }else{
-             header("Location: logeatu.php");
+             header("Location: ./pages/logeatu.php");
                  exit();
         
         }

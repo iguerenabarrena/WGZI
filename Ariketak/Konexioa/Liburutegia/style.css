@@ -1,0 +1,335 @@
+/* Reset básico y variables globales */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --hover-color: #2980b9;
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --text-light: #7f8c8d;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estructura general de la página */
+header {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem 1.5rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* Encabezados */
+h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+h3, h4 {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Navegación */
+nav {
+  background-color: var(--card-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Efecto hover en enlaces con destino */
+nav a[href]:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Estilo para enlaces vacíos o deshabilitados */
+nav a:not([href]) {
+  color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Bloques de texto / Párrafos destacados */
+p {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  background-color: var(--card-bg);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Botones de acción (ej. Liburu berria sortu) */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-1px);
+}
+
+/* ----------------------------------- */
+/* Estilos para TABLA DE LIBROS        */
+/* ----------------------------------- */
+.tabla-liburuak {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tabla-liburuak thead {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.tabla-liburuak th, 
+.tabla-liburuak td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+
+.tabla-liburuak th {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabla-liburuak tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.tabla-liburuak tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabla-liburuak tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Badges para la columna Egoera (Bai/Ez) */
+.badge-success {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: var(--success-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.badge-danger {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: var(--danger-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ----------------------------------- */
+/* Estilos para LOGIN                  */
+/* ----------------------------------- */
+main form {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: 420px;
+  margin: 2rem auto 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+main form label {
+  display: block;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+main form input[type="text"],
+main form input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  margin-bottom: 1.2rem;
+}
+
+main form input[type="text"]:focus,
+main form input[type="password"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+main form input[type="submit"] {
+  width: 100%;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+main form input[type="submit"]:hover {
+  background-color: var(--hover-color);
+}
+
+/* ----------------------------------- */
+/* Estilos para HASIERA / Listas        */
+/* ----------------------------------- */
+main ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main ul li a {
+  display: block;
+  background-color: var(--card-bg);
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid var(--accent-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main ul li a[href]:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+  color: var(--accent-color);
+}
+
+main ul li a:not([href]) {
+  color: var(--text-light);
+  border-left-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Adaptación para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    text-align: center;
+  }
+
+  main form {
+    padding: 1.5rem;
+  }
+
+  .tabla-liburuak {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
