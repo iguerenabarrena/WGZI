@@ -1,0 +1,21 @@
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f4f4;color:#222;display:flex;flex-direction:column;min-height:100vh}
+header,footer{background:#ffa500;color:#fff;text-align:center;padding:12px}
+header h1{margin:6px 0}header h5{margin:0 0 10px;font-weight:normal}
+nav{background:#e6e6e6;margin:12px -12px -12px;padding:8px}
+nav a{display:inline-block;background:#fff;color:#222;text-decoration:none;border:1px solid #ccc;padding:5px 12px;margin:2px;font-size:14px}
+nav a:hover{background:#ffe0a0}
+main{flex:1;width:min(900px,94%);margin:20px auto;background:#fff;padding:20px;border-radius:6px}
+main h2,main h3{color:#ffa500;text-align:center;text-transform:uppercase}
+form label{display:block;margin:10px 0 4px;font-size:14px}
+form input[type=text],form input[type=password]{width:100%;padding:7px;border:1px solid #ffa500}
+form input[type=radio]{margin:0 4px 0 12px}
+.btn,input[type=submit],button{background:#ffa500;color:#fff;border:0;padding:7px 16px;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px;margin-top:12px}
+.btn.grey,input[type=reset]{background:#666;color:#fff;border:0;padding:7px 16px;cursor:pointer}
+.btn.red{background:#e53935}.btn.green{background:#43a047}.btn.blue{background:#1e88e5}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th{background:#ffa500;color:#fff;padding:8px}td{padding:8px;border-bottom:1px solid #ddd;text-align:center}
+.error{background:#fdecea;color:#b71c1c;padding:8px;margin-bottom:10px}
+.ok{color:#2e7d32}.ko{color:#c62828}
+.box{border:2px solid #e53935;padding:16px}
+footer{font-size:13px}footer p{margin:3px}
